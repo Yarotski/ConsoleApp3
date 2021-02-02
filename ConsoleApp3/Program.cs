@@ -136,15 +136,10 @@ namespace ConsoleApp3
             
             var one = site.Select(x => x.webPages.SelectMany(x => x.webElements.Select(x => (x.LeftTop.X, x.LeftTop.Y, x.Width, x.Height)).OrderByDescending(x => x.X))).ToList();
             var two = site.Select(x => x.webPages.SelectMany(x => x.webElements).Where(x => x is Window).Select(x => x as Window).Where(x => x.Height > 10).Select(x => x.Name)).ToList();
-            var three = site.Select(x => x.webPages.SelectMany(x => x.webElements)).ToList();
-
-            
+                        
 
 
             Console.WriteLine("");
-
-
-
 
 
 
